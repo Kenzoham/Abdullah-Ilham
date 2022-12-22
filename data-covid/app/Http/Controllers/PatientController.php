@@ -7,10 +7,9 @@ use App\Models\Patient;
 
 class PatientController extends Controller
 {
-        # method index - get all resources Patient
+        // Method index untuk mendapatkan semua data Patients
         public function index()
         {
-            # menggunakan model Patient untuk select data
             $patients = Patient::all();
 
             if ($patients) {
@@ -19,26 +18,25 @@ class PatientController extends Controller
                     'data' => $patients,
                 ];
 
-                # json status code 200
+                // response json status code 200
                 return response()->json($data, 200);
             } else {
                 $data = [
                     'message' => 'Data is Empty',
                 ];
 
-                # json status code 200
+                // response json status code 200
                 return response()->json($data, 200);
             }
         }
   
 
-        # menambahkan resource Patient
-        # membuat method store
+        // Menambahkan data patient
+        // (Store)
         public function store(Request $request)
         {
-            # membuat validasi
+            //  Membuat validasi required
             $validatedData = $request->validate([
-                # kolom => rules|rules
                 'name' => 'required',
                 'phone' => 'numeric|required',
                 'address' => 'required',
@@ -47,24 +45,23 @@ class PatientController extends Controller
                 'out_date_at' => 'date|required',
             ]);
     
-            # menggunakan Patient untuk insert data
             $patient = Patient::create($validatedData);
-    
+            // Print
             $data = [
                 'message' => 'Resource is Added Successfully',
                 'data' => $patient,
             ];
     
-            # (json) status code 201
+            // Response JSON status code 201
             return response()->json($data, 201);
         }
   
 
-        # mendapatkan detail resource Patient
-        # method show
+        // Mendapatkan detail dari Patient berdasarkan id 
+        // (Show)
         public function show($id)
         {
-            # mencari data Patient
+            // Mencari Patient menggunakan id
             $patient = Patient::find($id);
     
             if ($patient) {
@@ -73,28 +70,29 @@ class PatientController extends Controller
                     'data' => $patient,
                 ];
     
-                # json status code 200
+                // response json status code 200
                 return response()->json($data, 200);
-            } else {
+            } 
+
+            else {
                 $data = [
                     'message' => 'Resource Not Found',
                 ];
     
-                # json status code 404
+                // response json status code 404
                 return response()->json($data, 404);
             }
         }
 
 
-        # update resource Patient
-        # method update
+        // Mengupdate data patien berdasarkan id 
+        // (Update)
         public function update(Request $request, $id)
         {
-            # mencari data Patient yg ingin diupdate
+            // mencari data Patient yg ingin diupdate berdasarkan id
             $patient = Patient::find($id);
 
             if ($patient) {
-                # mendapatkan data request
                 $input = [
                     'name' => $request->name ?? $patient->name,
                     'phone' => $request->phone ?? $patient->phone,
@@ -104,7 +102,6 @@ class PatientController extends Controller
                     'out_date_at' => $request->out_date_at ?? $patient->out_date_at,
                 ];
 
-                # mengupdate data
                 $patient->update($input);
     
                 $data = [
@@ -112,42 +109,41 @@ class PatientController extends Controller
                     'data' => $patient,
                 ];
 
-                # json dengan status code 200
+                // response json dengan status code 200
                 return response()->json($data, 200);
             } else {
                 $data = [
                     'message' => 'Resource Not Found',
                 ];
 
-                # json status code 404
+                // response json status code 404
                 return response()->json($data, 404);
             }
         }
       
 
-        # menghapus resource Patient
-        # method menghapus data
+        // Menghapus data Patient berdasarkan id
+        // (Destroy)
         public function destroy($id)
         {
-            # cari data Patient yg ingin dihapus
+            // Mencari data Patient yang ingin dihapus berdasarkan id
             $patient = Patient::find($id);
     
             if ($patient) {
-                # hapus data Patient
                 $patient->delete();
     
                 $data = [
                     'message' => 'Resource is Delete Successfully',
                 ];
     
-                # json status code 200
+                // response json status code 200
                 return response()->json($data, 200);
             } else {
                 $data = [
                     'message' => 'Resource Not Found',
                 ];
     
-                # json status code 404
+                // response json status code 404
                 return response()->json($data, 404);
             }
         }
@@ -165,7 +161,7 @@ class PatientController extends Controller
                     'data' => $patient,
                 ];
 
-                # json status code 200
+                // response json status code 200
 
                 return response()->json($data, 200);
             } else {
@@ -173,11 +169,12 @@ class PatientController extends Controller
                     'message' => 'Resource Not Found',
                 ];
 
-                # json status code 404
+                // response json status code 404
                 return response()->json($data, 404);
             }
         }
 
+        // Mencari data Patients berdasarkan status
         public function status($status)
         {
             $patients = Patient::where("status","like","%".$status."%")->get();
@@ -190,6 +187,7 @@ class PatientController extends Controller
             return response()->json($data, 200);
         }
 
+        // Mencari data Patients berdasarkan status (positive)
         public function positive()
         {
             $patients = Patient::where("status","positive")->get();
@@ -202,6 +200,7 @@ class PatientController extends Controller
             return response()->json($data, 200);
         }
 
+        // Mencari data Patients berdasarkan status (recovered)
         public function recovered()
         {
             $patients = Patient::where("status","recovered")->get();
@@ -214,6 +213,7 @@ class PatientController extends Controller
             return response()->json($data, 200);
         }
 
+        // Mencari data Patients berdasarkan status (dead)
         public function dead()
         {
             $patients = Patient::where("status","dead")->get();
