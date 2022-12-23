@@ -13,18 +13,18 @@ pertama - tama saya akan memperkenalkan tools - tools yang saya gunakan yaitu:
 
 ## Proses pembuatan
 
-1. Setelah menyiapkan tools - tools yang di perlukan langsung saja kita buka xampp nya
-2. Kita aktifkan Apache dan MySql di Xampp 
-3. Setelah aktif kita buka fiture shell di Xampp
-4. Di shell kita akan membuat sebuah project laravel menggunakan code
-```sh
-composer create-project laravel/laravel rest-api
-```
-5. Setelah project Laravel berhasil dibuat, kita akan membuka project tersebut menggunakan VSCODE
-6. 
+1. Membuat Project Laravel menggunakan Xampp
+    - Aktifkan Apache dan MySql di dalam Xampp 
+    - Setelah aktif kita buka fiture shell di Xampp
+    - Di shell kita akan membuat sebuah project laravel menggunakan code
+    ```sh
+    composer create-project laravel/laravel rest-api
+    ```
+    - project Laravel berhasil dibuat
 
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
+2. Proses Routing di Laravel  
+    - Setelah project Laravel berhasil dibuat, kita akan membuka project tersebut menggunakan VSCODE
+    - Export documents as Markdown, HTML and PDF
 
 Markdown is a lightweight markup language based on the formatting conventions
 that people naturally use in email.
