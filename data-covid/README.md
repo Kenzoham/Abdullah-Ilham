@@ -24,7 +24,13 @@ pertama - tama saya akan memperkenalkan tools - tools yang saya gunakan yaitu:
 
 2. Proses Routing di Laravel  
     - Setelah project Laravel berhasil dibuat, kita akan membuka project tersebut menggunakan VSCODE
-    - Export documents as Markdown, HTML and PDF
+    - Di VSCODE kita akan membuat sebuah endpoint, endPoint ini bertujuan untuk kita melakukan testing menggunakan postman kedepannya
+    - End Point yang kita akan buat yaitu
+    - ![image.png]( {https://github.com/Kenzoham/Abdullah-Ilham/blob/main/data-covid/Dokumentasi/end-point_yang-akan-dibuat.png} )
+    - Dari endpoint tersebut kita terapkan ke dalam laravel sehingga menjadi code seperti ini
+    -
+3. Proses Authentication
+
 
 Markdown is a lightweight markup language based on the formatting conventions
 that people naturally use in email.
