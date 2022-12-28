@@ -26,9 +26,9 @@ pertama - tama saya akan memperkenalkan tools - tools yang saya gunakan yaitu:
     - Setelah project Laravel berhasil dibuat, kita akan membuka project tersebut menggunakan VSCODE
     - Di VSCODE kita akan membuat sebuah endpoint, endPoint ini bertujuan untuk kita melakukan testing menggunakan postman kedepannya
     - End Point yang kita akan buat yaitu
-    - ![image.png]( {https://github.com/Kenzoham/Abdullah-Ilham/blob/main/data-covid/Dokumentasi/end-point_yang-akan-dibuat.png} )
+    - <p align="center"><img src="https://github.com/Kenzoham/Abdullah-Ilham/blob/main/data-covid/Dokumentasi/end-point_yang-akan-dibuat.png" width="500" alt="Laravel Logo"></p>
     - Dari endpoint tersebut kita terapkan ke dalam laravel sehingga menjadi code seperti ini
-    -
+    - <p align="center"><img src="https://github.com/Kenzoham/Abdullah-Ilham/blob/main/data-covid/Dokumentasi/routing.png" width="500" alt="Laravel Logo"></p>
 3. Proses Authentication
 
 
